@@ -1,0 +1,19 @@
+<div>
+    You are logged in as: {{ request.session.username }}
+    <br>
+    Admin status: {{ request.session.is_admin }}
+</div>
+
+<a href="/logout/">Logout</a>
+<a href="/login/">Log in</a>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

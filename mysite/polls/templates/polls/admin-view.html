@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin view</title>
+</head>
+
+
+<body>
+<div>
+    You are logged in as: {{ request.session.username }}
+    <br>
+    Admin status: {{ request.session.is_admin }}
+</div>
+
+<h2>Highly secret information only for admins:</h2>
+
+<head>
+    <title>All users:</title>
+</head>
+<table>
+{% for user in users %}
+<tr>
+    <td><strong>Username:</strong> {{ user.username }}</td>
+    <td><strong>Password:</strong> {{ user.password }}</td>
+    <td><strong>Admin status:</strong> {{ user.admin_status }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+</html>
