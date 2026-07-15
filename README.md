@@ -1,4 +1,4 @@
-# Cybersecurity OWASP 2021
+# Cybersecurity project (OWASP 2021)
 
 This is a small project made for the Cyber Security Base: Course Project I course. 
 
